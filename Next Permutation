@@ -7,6 +7,8 @@
 // Next we want to minimize 3521 - thats easier - just sort the numbers to the right of 3 - 3125. So the unswer is 4323125
 
 
+// for reference :- https://youtu.be/IhsUbEMfIbY
+
 class Solution {
     public void nextPermutation(int[] nums) {
         int i= nums.length-2;
