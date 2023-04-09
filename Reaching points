@@ -1,0 +1,44 @@
+class Solution {
+public:
+    bool reachingPoints(long a, long b, long c, long d) {
+        
+        // if(a>c || b>d)
+        // return false;
+        // if(a==c and b==d)
+        // return true;
+
+        // bool t1 = reachingPoints(a+b,b,c,d);
+        // bool t2 = reachingPoints(a,a+b,c,d);
+        // if(t1 || t2)
+        // return true;
+        // return false;
+
+
+        while(c>=a and d>=b)
+        {
+            if(a==c && b==d)
+            return true;
+
+            if(c>d)
+            c %= d;
+            else
+            d %= c;
+
+            if(a==c)
+            {
+                if((d-b)%a==0)
+                return true;
+                else
+                return false;
+            }
+            if(b==d)
+            {
+                if((c-a)%d==0)
+                return true;
+                else
+                return false;
+            }
+        }
+        return false;
+    }
+};
