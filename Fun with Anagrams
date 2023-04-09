@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+vector<string> fun(vector<string> v)
+{
+    vector<string> ans;
+    map<string,int> mp;
+    
+    for(string s:v)
+    {
+        sort(s.begin(),s.end());
+        mp[s]++;
+    }
+    
+    for(string s:v)
+    {
+        string tem = s;
+        sort(s.begin(),s.end());
+        if(mp[s])
+        {
+            ans.push_back(tem);
+        }
+        mp[s]=0;
+    }
+    return ans;
+}
+int main()
+{
+    vector<string> v;
+    v.push_back("code");
+    v.push_back("doce");
+    v.push_back("ecod");
+    v.push_back("framer");
+    v.push_back("frame");
+    
+    vector<string> ans;
+    ans = fun(v);
+    for(string s:ans)
+    {
+        cout<<s<<endl;
+    }
+}
